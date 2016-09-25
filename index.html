@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body ng-app="myApp">
+	<div class="container">
+		<!-- <h2>ToDoList</h2> -->
+		<div class="col-sm-6" ng-controller="AddItemController as addItems">
+			<div id="message-container" class="well">
+				<div class="text">{{addItems.warning}}</div>
+			</div>
+			<form  class="form-inline">
+				<input type="text" class="form-control" ng-model="addItems.thing" placeholder="new item">
+				<div class="form-group">			
+					<button ng-click="addItems.addItem()" class="btn btn-sm btn-primary" ng-disabled="!addItems.thing">Add to list
+					</button>
+					<button ng-click="addItems.clearList()" class="btn btn-sm btn-danger" ng-disabled="!addItems.items.length">Clear list
+					</button>		
+					<button ng-click="addItems.reduceList()" class="btn btn-sm btn-success" ng-disabled="!addItems.items.length">Reduce list
+					</button>
+				</div>
+			</form>
+			<to-do-list my-ctrl="addItems" title="{{addItems.title}}"></to-do-list>
+		</div>
+		<div class="col-sm-6" ng-controller="DoneThingsController as doneThings">
+			<div id="message-container" class="well">
+				<div class="text-danger ">{{doneThings.message}}</div>
+			</div>
+			<done-items-list my-ctrl="doneThings" title="{{doneThings.title}}" class="done-items-list"></done-items-list>
+		</div>
+	</div>
+</body>
+</html>

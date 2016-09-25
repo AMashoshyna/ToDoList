@@ -1,0 +1,27 @@
+.remove-button {
+	margin-left: 5px;
+}
+
+li {
+	margin-top: 5px;
+}
+#message-container {
+	height: 50px;
+}
+.well {
+	background-color: rgba(255,255,255,0.4); 
+	border: none;
+}
+
+/*.text {
+	font-size: 1.3em;
+}*/
+
+ol {
+	margin: 10px;
+}
+
+.done-items-list {
+	margin-top: 50px;
+}
+
